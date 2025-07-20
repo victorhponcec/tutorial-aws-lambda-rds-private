@@ -1,13 +1,13 @@
 import pymysql
 import os
 
-# Database configuration
+#Database config
 DB_HOST = os.environ.get('DB_HOST') #uses environment variable declared in lambda.tf > aws_lambda_function
 DB_USER = 'test'
 DB_PASSWORD = 'bananastest'
 DB_NAME = 'dbtest'
 
-# SQL query to create the "users" table
+#Create the "users" table
 CREATE_TABLE_SQL = """
 CREATE TABLE IF NOT EXISTS users (
     id INT(11) NOT NULL AUTO_INCREMENT,
@@ -17,12 +17,11 @@ CREATE TABLE IF NOT EXISTS users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=1;
 """
 
-# SQL query to insert a new user
+#Insert a new user
 INSERT_USER_SQL = """
 INSERT INTO users (email, password) VALUES (%s, %s);
 """
 
-# SQL query to select all rows from "users"
 SELECT_USERS_SQL = "SELECT * FROM users;"
 
 def lambda_handler(event, context):
@@ -41,9 +40,9 @@ def lambda_handler(event, context):
             connection.commit()
 
             sample_users = [
-                ("alice@example.com", "password123"),
-                ("bob@example.com", "securepass"),
-                ("charlie@example.com", "letmein")
+                ("kirk@example.com", "tribles1701"),
+                ("spock@example.com", "ahnwoon"),
+                ("mccoy@example.com", "imadoctornotapassword")
             ]
             
             for user in sample_users:

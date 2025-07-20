@@ -73,7 +73,7 @@ resource "aws_lambda_function" "lambda_vpc" {
   }
   environment {
     variables = {
-      DB_HOST = aws_db_instance.rds.address #env variable: passes RDS endpoint to lambda.py
+      DB_HOST = aws_db_instance.rds.address #env variable: passes the RDS endpoint to lambda.py
     }
   }
 }
