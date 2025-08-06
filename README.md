@@ -1,5 +1,3 @@
-Lambda is a highly available service and it's recommended to declare at least two subnets in two different AZs.
-the Lambda will place one ENI in either of the two subnets we declared, and if this subnet goes down, the Lambda will place its ENI in the available subnet. 
 
 # Overview
 
